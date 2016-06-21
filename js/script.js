@@ -1,8 +1,9 @@
 $(document).ready(function(){
   
-  $('body').on('click', 'button', function(){
-
-    for(var i = 1; i <= 100; i++){
+  var number = prompt('Please supply a number')
+  
+  var fn = function(givenNumber){
+    for(var i = 1; i <= givenNumber; i++){
       if(i % 3 === 0 && i % 5 === 0){
         $('ul').append('FizzBuzz<br>')
       }else if(i % 3 === 0){
@@ -13,7 +14,12 @@ $(document).ready(function(){
         $('ul').append(i + '<br>')
       }
     }
-  })
+  };
+  
+  
+  $('body').on('click', 'button', function(){
+    fn(number);
+  });
    
 });
 
